@@ -1,6 +1,8 @@
 // Card.tsx
 import React from 'react';
 import Button from '../atoms/Button';
+import Input from '../atoms/Input';
+import Icon from '../atoms/Icon'
 
 const Card: React.FC = () => {
   const handleClick = () => {
@@ -9,11 +11,34 @@ const Card: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-200 p-4 rounded">
-      <h2>Card Title</h2>
-      <p>This is the content of the card.</p>
-      <Button onClick={handleClick} text='Fuck me' />
-      <Button className='bg-red-500' onClick={handleClick} text='Click me'/>
+    <section className="bg-white w-[375px] flex flex-col h-[100vh]">
+      
+      <div>
+        <img src="/src/assets/illustration-sign-up-mobile.svg" alt="" className='w-[375px] '/>
+      </div>
+      <div className='mx-6 flex flex-col '>
+          <h1 className='.roboto-bold'>Stay updated!</h1>
+      <p className='mb-4'>Join 60,000+ product managers receiving monthly uptades on:</p>
+
+      <ul className=' mb-4'>
+  <li className="flex items-center mb-4">
+    <Icon className="mr-2" /> Product discovery and building what matters
+  </li>
+  <li className="flex items-center mb-4">
+    <Icon className="mr-2" /> Measuring to ensure updates are a success
+  </li>
+  <li className="flex items-center">
+    <Icon className="mr-2" /> And much more!
+  </li>
+</ul>
+
+
+      <Input/>
+      
+      <Button className=' bg-blue-950' onClick={handleClick} text='Subscribe to monthly newsletter'/>
+      </div>
+
+    
     </section>
   );
 }

@@ -4,11 +4,11 @@ import Card from '../molecules/Card';
 
 const HomePage: React.FC = () => {
   return (
-    <main>
-      <div className="flex justify-center">
+    <body className='bg-[#36384e] w-[100vw] h-[100vh] flex items-center justify-center'>
+      <div className=" flex justify-center">
         <Card />
       </div>
-    </main>
+    </body>
   );
 }
 
