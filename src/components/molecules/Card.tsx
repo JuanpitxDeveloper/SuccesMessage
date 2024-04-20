@@ -11,31 +11,31 @@ const Card: React.FC = () => {
   };
 
   return (
-    <section className="bg-white w-[375px] flex flex-col h-[100vh]">
+    <section className="bg-white w-[375px] flex flex-col h-[740px] lg:h-[100vh] lg:w-[100vw]  lg:flex lg:justify-center lg:items-center ">
       
-      <div>
-        <img src="/src/assets/illustration-sign-up-mobile.svg" alt="" className='w-[375px] '/>
+      <div className='lg:block'> <img className='hidden lg:block lg:w-[300px] ' src="/src/assets/illustration-sign-up-desktop.svg" alt="" />
+      <img className='lg:hidden' src="/src/assets/illustration-sign-up-mobile.svg" alt=""/>
       </div>
-      <div className='mx-6 flex flex-col '>
-          <h1 className='.roboto-bold'>Stay updated!</h1>
-      <p className='mb-4'>Join 60,000+ product managers receiving monthly uptades on:</p>
+      <div className='mx-6 flex flex-col mt-4  '>
+          <h1 className='.roboto-bold text-[26px] lg:text-[30px]'>Stay updated!</h1>
+      <p className='my-4 text-sm lg:text-base'>Join 60,000+ product managers receiving monthly uptades on:</p>
 
-      <ul className=' mb-4'>
-  <li className="flex items-center mb-4">
-    <Icon className="mr-2" /> Product discovery and building what matters
+      <ul className='  my-2 text-sm lg:text-[16px] '>
+  <li className="flex items-center mb-5  ">
+    <Icon/> Product discovery and building what matters
   </li>
-  <li className="flex items-center mb-4">
-    <Icon className="mr-2" /> Measuring to ensure updates are a success
+  <li className="flex items-center mb-5">
+    <Icon /> Measuring to ensure updates are a success
   </li>
-  <li className="flex items-center">
-    <Icon className="mr-2" /> And much more!
+  <li className="flex items-center mb-5">
+    <Icon /> And much more!
   </li>
 </ul>
 
 
-      <Input/>
+      <Input className='rounded-lg mb-4'/>
       
-      <Button className=' bg-blue-950' onClick={handleClick} text='Subscribe to monthly newsletter'/>
+      <Button className=' rounded-lg bg-blue-950 h-[50px]' onClick={handleClick} text='Subscribe to monthly newsletter'/>
       </div>
 
     
