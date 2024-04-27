@@ -1,8 +1,7 @@
-// Card.tsx
 import React from 'react';
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
-import Icon from '../atoms/Icon'
+import Icon from '../atoms/Icon';
 
 const Card: React.FC = () => {
   const handleClick = () => {
@@ -11,36 +10,43 @@ const Card: React.FC = () => {
   };
 
   return (
-    <section className="bg-white w-[375px] flex flex-col h-[740px] lg:h-[100vh] lg:w-[100vw]  lg:flex lg:justify-center lg:items-center ">
-      
-      <div className='lg:block'> <img className='hidden lg:block lg:w-[300px] ' src="/src/assets/illustration-sign-up-desktop.svg" alt="" />
-      <img className='lg:hidden' src="/src/assets/illustration-sign-up-mobile.svg" alt=""/>
+    <section className="bg-white w-screen h-screen  flex flex-col justify-center items-center lg:flex-row-reverse lg:h-[28rem] lg:w-[650px] lg:p-6 lg:rounded-xl">
+      {/* Div para las imágenes */}
+      <div className="w-full lg:w-[50%] h-[18rem] lg:h-[380px]  flex justify-center lg:justify-start lg:pl-[60px]">
+        <div>
+          <img className="hidden lg:block w-[250px]" src="/src/assets/illustration-sign-up-desktop.svg" alt="" />
+        </div>
+        <div className="w-auto">
+          <img className="lg:hidden object-center" src="/src/assets/illustration-sign-up-mobile.svg" alt="" />
+        </div>
       </div>
-      <div className='mx-6 flex flex-col mt-4  '>
-          <h1 className='.roboto-bold text-[26px] lg:text-[30px]'>Stay updated!</h1>
-      <p className='my-4 text-sm lg:text-base'>Join 60,000+ product managers receiving monthly uptades on:</p>
+      {/* Div para el contenido */}
+      <div className="mx-6 flex flex-col lg:w-[250px] lg:mt-1 mt-4 justify-center items-center lg:items-start lg:ml-[5px] lg:mx-">
+        <h1 className=".roboto-bold text-[26px] ">Stay updated!</h1>
+        <p className="lg:my-1 my-4 text-sm ">Join 60,000+ product managers receiving monthly updates on:</p>
 
-      <ul className='  my-2 text-sm lg:text-[16px] '>
-  <li className="flex items-center mb-5  ">
-    <Icon/> Product discovery and building what matters
-  </li>
-  <li className="flex items-center mb-5">
-    <Icon /> Measuring to ensure updates are a success
-  </li>
-  <li className="flex items-center mb-5">
-    <Icon /> And much more!
-  </li>
-</ul>
+        <ul className="my-2 text-sm ">
+          <ListItem icon={<Icon />} text="Product discovery and building what matters" />
+          <ListItem icon={<Icon />} text="Measuring to ensure updates are a success" />
+          <ListItem icon={<Icon />} text="And much more!" />
+        </ul>
 
-
-      <Input className='rounded-lg mb-4'/>
-      
-      <Button className=' rounded-lg bg-blue-950 h-[50px]' onClick={handleClick} text='Subscribe to monthly newsletter'/>
+        <Input className="rounded-lg md:mb-4  " />
+        
+        <Button className="rounded-lg bg-blue-950 h-[50px] w-[100%] " onClick={handleClick} text="Subscribe to monthly newsletter" />
       </div>
-
-    
     </section>
   );
 }
+
+// Componente ListItem para representar cada elemento de lista
+const ListItem: React.FC<{ icon: JSX.Element; text: string }> = ({ icon, text }) => {
+  return (
+    <li className="flex items-center mb-5">
+      {icon}
+      <span className="mx-4">{text}</span>
+    </li>
+  );
+};
 
 export default Card;
