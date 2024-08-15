@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({ className }) => {
   return (
     <form action="input" className='text-[14px]  mb-4'>
       <label htmlFor="email" className={className}>
-        Email address
+        Email addresss
         <input
           type="email"
           id="email"
